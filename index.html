@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Li & Clover Learned</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #1b5e20;
+            --secondary-green: #43a047;
+            --light-green: #e8f5e9;
+            --accent-green: #66bb6a;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--light-green) 0%, #f1f8e9 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header with clover motif */
+        header {
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .clover-header {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            animation: shimmer 3s infinite;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            75% { transform: rotate(-10deg); }
+        }
+
+        /* Cards layout */
+        .learning-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--secondary-green), var(--accent-green));
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .date {
+            font-size: 0.875rem;
+            color: var(--secondary-green);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .card-content {
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .card-content p {
+            margin-bottom: 0.8rem;
+        }
+
+        .highlight {
+            background: var(--light-green);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            color: var(--primary-green);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .footer-clover {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .clover-header {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 1.25rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for cards */
+        .card {
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stagger animation for cards */
+        .card:nth-child(odd) {
+            animation-delay: 0.1s;
+        }
+        .card:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="clover-header">🍀</div>
+            <h1>What Li & Clover Learned</h1>
+            <div class="subtitle">Notes from October 2026 — one human, one AI agent, figuring things out together.</div>
+        </header>
+
+        <main class="learning-cards">
+            <article class="card">
+                <div class="date">Oct 6, 2026</div>
+                <h2 class="card-title">Clover gets her name</h2>
+                <div class="card-content">
+                    <p>Li wanted a name meaning lucky and smart, like an energetic young lady. We landed on <span class="highlight">"Clover"</span>. Later she got her avatar: Option 2, an anime-style girl with green hair and clover motifs, generated from a reference image Li provided.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="date">Oct 6, 2026</div>
+                <h2 class="card-title">Power-user tricks for Muse Spark</h2>
+                <div class="card-content">
+                    <p>The clever ways to use an AI agent: give it recurring scheduled jobs, hand it big jobs and walk away while it works in the background, teach it preferences once via memory, use side chats per topic, connect apps so it can act not just talk.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="date">Oct 6, 2026</div>
+                <h2 class="card-title">Agent payments, honestly assessed</h2>
+                <div class="card-content">
+                    <p>AI agents can buy things, but every purchase needs explicit approval of the exact terms, approvals cannot be pre-granted or automated, and merchants get one-time credentials instead of the real card. <span class="highlight">Small routine purchases are fine today; big ones still deserve human eyes.</span> The future is agent-native checkout rails.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="date">Oct 6, 2026</div>
+                <h2 class="card-title">Optimism as a strategy</h2>
+                <div class="card-content">
+                    <p>Li believes optimistic people survive into the future. We turned that into images: an optimistic illustration of Clover, then restyled in anime, Japanese game key-art, cinematic game CG, and photorealistic styles.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="date">Oct 6, 2026</div>
+                <h2 class="card-title">Time zones</h2>
+                <div class="card-content">
+                    <p>8:30pm in New York is 9:30am next day in Tokyo and 8:30am in China. US daylight saving ends Nov 1, 2026, which slides those times an hour later.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="date">Oct 10, 2026</div>
+                <h2 class="card-title">The kernel keyring experiment</h2>
+                <div class="card-content">
+                    <p>Li wanted to hand over an API key via the Linux kernel keyring instead of chat or disk. The gotcha: keys added straight to the shared user keyring are unreadable even by their creator due to a kernel permission catch-22. The working recipe: add to the session keyring first (creator becomes possessor), setperm to grant the user access, then link into the user keyring. <span class="highlight">Keys live in RAM only and vanish on reboot.</span></p>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="date">Oct 10, 2026</div>
+                <h2 class="card-title">No user terminal in Muse</h2>
+                <div class="card-content">
+                    <p>The VM shell is the agents tool only; there is no user-facing terminal in the Muse app. An unofficial third-party project called muse-console adds a web terminal via tunneling, but it is a hobbyist hack.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="date">Oct 10, 2026</div>
+                <h2 class="card-title">Secure Vault + OpenRouter</h2>
+                <div class="card-content">
+                    <p>The realistic path for the API key: Muse Secure Vault, where the key is entered on a secure page the agent never sees. OpenRouter was connected that way, a workspace skill was built to call it, and a scan found 19 free models.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="date">Oct 10, 2026</div>
+                <h2 class="card-title">FreeToken-Bots skill research</h2>
+                <div class="card-content">
+                    <p>A skill that discovers zero-price OpenRouter models for Pi child-agent coding workflows. Notable for its fail-closed safety design: it refuses to probe any model not in the verified-free scan, because dropping the <span class="highlight">":free" suffix silently routes to the paid variant.</span></p>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="date">Oct 10, 2026</div>
+                <h2 class="card-title">Pi lands</h2>
+                <div class="card-content">
+                    <p>Pi 1.1.0, the terminal AI coding agent, installed on the VM and wired to OpenRouter. This very page was built by Pi.</p>
+                </div>
+            </article>
+        </main>
+
+        <footer>
+            <div class="footer-clover">🍀</div>
+            <p>Built by Pi, an AI coding agent, running on free OpenRouter models.</p>
+        </footer>
+    </div>
+</body>
+</html>
